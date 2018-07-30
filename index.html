@@ -10,9 +10,9 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   <style><!--
   .box { float:left;}
-  .parts-box { float:right; height:300px; width:500px; }
+  .parts-box { float:right; height:300px; width:400px; }
   .parts { position: relative; z-index: 2; }
-  .base { position: absolute; top:50px; left:10px; z-index: 3; }
+  .base { position: absolute; top:50px; left:10px; z-index: 1; }
   -->
   </style>
   <script>
@@ -45,16 +45,14 @@
     $( "#draggable26" ).draggable();
   });
 
-  function screenshot(selector) {
-    var element = $(selector)[0];
-    html2canvas(element, { onrendered: function(canvas) {
+  function screenshot() {
+    html2canvas(document.getElementById('box'), { onrendered: function(canvas) {
         var dataUrl = canvas.toDataURL('image/png');
-        document.body.appendChild(canvas);
         var event = document.createEvent("MouseEvents");
         event.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
         var a = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
         a.href = dataUrl;
-        a.download = "KiracCHU";
+        a.download = "KiracCHU.png";
         a.dispatchEvent(event);
     }});
   }
@@ -73,26 +71,16 @@
 <body>
   <div>
     <b>KiracCHU Maker</b>
-    <button id="save" onclick="screenshot('#box')">Save!</button>
+    <button id="save" onclick="screenshot()">Save!</button>
     <button id="reload">Reload</button>
   </div>
 
   <div id="box" class="box"><img id="baseimg" class="base" src="/KiracCHU_M/res/base.png"></div>
   
   <div class="parts-box">
-    <img id="draggable1" class="parts" src="/KiracCHU_M/res/ear1.png">
-    <img id="draggable2" class="parts" src="/KiracCHU_M/res/ear2.png">
-    <img id="draggable3" class="parts" src="/KiracCHU_M/res/ear3.png">
-    <img id="draggable4" class="parts" src="/KiracCHU_M/res/ear4.png">
+    <img id="draggable23" class="parts" src="/KiracCHU_M/res/tail1.png">
+    <img id="draggable24" class="parts" src="/KiracCHU_M/res/tail2.png">
     <img id="draggable5" class="parts" src="/KiracCHU_M/res/egg1.png">
-    <img id="draggable6" class="parts" src="/KiracCHU_M/res/eye1.png">
-    <img id="draggable7" class="parts" src="/KiracCHU_M/res/eye2.png">
-    <img id="draggable8" class="parts" src="/KiracCHU_M/res/eye3.png">
-    <img id="draggable9" class="parts" src="/KiracCHU_M/res/eye4.png">
-    <img id="draggable10" class="parts" src="/KiracCHU_M/res/eye5.png">
-    <img id="draggable11" class="parts" src="/KiracCHU_M/res/eye6.png">
-    <img id="draggable12" class="parts" src="/KiracCHU_M/res/eye7.png">
-    <img id="draggable13" class="parts" src="/KiracCHU_M/res/eye8.png">
     <img id="draggable14" class="parts" src="/KiracCHU_M/res/face_star.png">
     <img id="draggable15" class="parts" src="/KiracCHU_M/res/hoppe1.png">
     <img id="draggable16" class="parts" src="/KiracCHU_M/res/hoppe2.png">
@@ -102,8 +90,18 @@
     <img id="draggable20" class="parts" src="/KiracCHU_M/res/nose1.png">
     <img id="draggable21" class="parts" src="/KiracCHU_M/res/ribbon1.png">
     <img id="draggable22" class="parts" src="/KiracCHU_M/res/ribbon2.png">
-    <img id="draggable23" class="parts" src="/KiracCHU_M/res/tail1.png">
-    <img id="draggable24" class="parts" src="/KiracCHU_M/res/tail2.png">
+    <img id="draggable1" class="parts" src="/KiracCHU_M/res/ear1.png">
+    <img id="draggable2" class="parts" src="/KiracCHU_M/res/ear2.png">
+    <img id="draggable3" class="parts" src="/KiracCHU_M/res/ear3.png">
+    <img id="draggable4" class="parts" src="/KiracCHU_M/res/ear4.png">
+    <img id="draggable6" class="parts" src="/KiracCHU_M/res/eye1.png">
+    <img id="draggable7" class="parts" src="/KiracCHU_M/res/eye2.png">
+    <img id="draggable8" class="parts" src="/KiracCHU_M/res/eye3.png">
+    <img id="draggable9" class="parts" src="/KiracCHU_M/res/eye4.png">
+    <img id="draggable10" class="parts" src="/KiracCHU_M/res/eye5.png">
+    <img id="draggable11" class="parts" src="/KiracCHU_M/res/eye6.png">
+    <img id="draggable12" class="parts" src="/KiracCHU_M/res/eye7.png">
+    <img id="draggable13" class="parts" src="/KiracCHU_M/res/eye8.png">
     <img id="draggable25" class="parts" src="/KiracCHU_M/res/tear1.png">
     <img id="draggable26" class="parts" src="/KiracCHU_M/res/tear2.png">
   </div>
