@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>キラッCHUメーカー</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <style><!--
+  .box { float:left;}
+  .parts-box { float:right; height:300:px; width:500px; }
+  .parts { position: relative; z-index: 2; }
+  -->
+  </style>
+  <script>
+  $(function() {
+    $( "#draggable1" ).draggable();
+    $( "#draggable2" ).draggable();
+    $( "#draggable3" ).draggable();
+    $( "#draggable4" ).draggable();
+    $( "#draggable5" ).draggable();
+    $( "#draggable6" ).draggable();
+    $( "#draggable7" ).draggable();
+    $( "#draggable8" ).draggable();
+    $( "#draggable9" ).draggable();
+    $( "#draggable10" ).draggable();
+    $( "#draggable11" ).draggable();
+    $( "#draggable12" ).draggable();
+    $( "#draggable13" ).draggable();
+    $( "#draggable14" ).draggable();
+    $( "#draggable15" ).draggable();
+    $( "#draggable16" ).draggable();
+    $( "#draggable17" ).draggable();
+    $( "#draggable18" ).draggable();
+    $( "#draggable19" ).draggable();
+    $( "#draggable20" ).draggable();
+    $( "#draggable21" ).draggable();
+  });
+
+  $(function screenshot(selector) {
+    var element = $(selector)[0];
+    html2canvas(element, { onrendered: function(canvas) {
+        var dataUrl = canvas.toDataURL('image/png');
+        document.body.appendChild(canvas);
+        var event = document.createEvent("MouseEvents");
+        event.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        var a = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+        a.href = dataUrl;
+        a.download = "KiracCHU_McCHU";
+        a.dispatchEvent(event);
+    }});
+  });
+
+
+
+  $(function() {
+    $('#reload').click(function(){
+    location.reload();
+    });
+  });
+
+
+  </script>
+</head>
+<body>
+  <div>
+    <b>KiracCHU Maker</b>
+    <button id="save" onclick="screenshot('#box')">Save!</button>
+    <button id="reload">Reload</button>
+  </div>
+
+  <div class="box"></div>
+  
+  <div class="parts-box">
+    <img id="draggable1" class="parts" src="/KiracCHU_M/res/ear1.png">
+    <img id="draggable2" class="parts" src="/KiracCHU_M/res/ear2.png">
+    <img id="draggable3" class="parts" src="/KiracCHU_M/res/ear3.png">
+    <img id="draggable4" class="parts" src="/KiracCHU_M/res/ear4.png">
+    <img id="draggable5" class="parts" src="/KiracCHU_M/res/egg1.png">
+    <img id="draggable6" class="parts" src="/KiracCHU_M/res/eye1.png">
+    <img id="draggable7" class="parts" src="/KiracCHU_M/res/eye2.png">
+    <img id="draggable8" class="parts" src="/KiracCHU_M/res/eye3.png">
+    <img id="draggable9" class="parts" src="/KiracCHU_M/res/eye4.png">
+    <img id="draggable10" class="parts" src="/KiracCHU_M/res/eye5.png">
+    <img id="draggable11" class="parts" src="/KiracCHU_M/res/eye6.png">
+    <img id="draggable12" class="parts" src="/KiracCHU_M/res/eye7.png">
+    <img id="draggable14" class="parts" src="/KiracCHU_M/res/eye8.png">
+    <img id="draggable15" class="parts" src="/KiracCHU_M/res/face_star.png">
+    <img id="draggable16" class="parts" src="/KiracCHU_M/res/hoppe1.png">
+    <img id="draggable17" class="parts" src="/KiracCHU_M/res/hoppe2.png">
+    <img id="draggable18" class="parts" src="/KiracCHU_M/res/mouse1.png">
+    <img id="draggable19" class="parts" src="/KiracCHU_M/res/mouse2.png">
+    <img id="draggable20" class="parts" src="/KiracCHU_M/res/mouse3.png">
+    <img id="draggable21" class="parts" src="/KiracCHU_M/res/nose1.png">
+    <img id="draggable22" class="parts" src="/KiracCHU_M/res/ribbon1.png">
+    <img id="draggable23" class="parts" src="/KiracCHU_M/res/ribbon2.png">
+    <img id="draggable24" class="parts" src="/KiracCHU_M/res/tail1.png">
+    <img id="draggable25" class="parts" src="/KiracCHU_M/res/tail2.png">
+    <img id="draggable26" class="parts" src="/KiracCHU_M/res/tear1.png">
+    <img id="draggable26" class="parts" src="/KiracCHU_M/res/tear2.png">
+  </div>
+</body>
+</html>
+
